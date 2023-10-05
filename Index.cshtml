@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        form {
+            border-radius: 10px;
+            text-align: center;
+            background-color: bisque;
+        }
+
+        #employeeList {
+            border-radius: 5px;
+            border-color: yellow;
+            background-color: lemonchiffon;
+            width: 100%;
+        }
+
+        thead {
+            text-align: center;
+            padding: 15px;
+            text-align: left;
+            color: firebrick;
+        }
+
+
+        tbody {
+            text-align: center;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .error {
+            color: red;
+        }
+
+        h1 {
+            text-align: center;
+            color: chocolate;
+            border: 10px saddlebrown;
+        }
+
+        #searchbar {
+            padding: 10px;
+            width: 300px;
+            border: 10 px solid goldenrod;
+            font-size: 16px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <h1>Registration Form</h1>
+    <form onsubmit="event.preventDefault();formsubmit();" autocomplete="off">
+        <div id="form">
+            <label for="Id">ID</label>
+            <input type="number" id="Id" name="Id">
+            <span class="error" id="errId"></span><br><br>
+
+            <label for="Name">Name</label>
+            <input type="text" id="Name" name="Name">
+            <span class="error" id="errName"></span><br><br>
+
+            <label for="Age">Age</label>
+            <input type="number" id="Age" name="Age">
+            <span class="error" id="errAge"></span><br><br>
+
+
+
+            <input type="submit" id="submit">
+            <input type="reset" value="Reset">
+        </div><br><br>
+    </form>
+    <h1>..........DETAILS..........</h1>
+    <input type="text" class="btn btn-outline-primary" id="searchbar" placeholder="Search here.." onkeyup="search()">
+    <br>
+    <table id="employeeList">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                
+            </tr>
+        </thead>
+        <tbody></tbody>
+
+    </table>
+
+    <h1 id="norecords"></h1>
+
+    <script src="~/Content/WebApi.js"></script>
+
+</body>
+
+</html>
